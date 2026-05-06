@@ -25,3 +25,13 @@ def get_user_numbers():
         print("Invalid input. Please enter valid numbers.")
         return None, None
 
+
+def choose_operation():
+    print("\nChoose operation:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+
+    user_choice = input("Enter choice (1-4): ")
+    return user_choice
