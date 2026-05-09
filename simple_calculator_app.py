@@ -71,3 +71,123 @@ def display_menu():
     print("7. Math Quiz")
     print("8. Exit")
 
+
+def get_two_numbers():
+
+    try:
+
+        first_number = float(input("Enter first number: "))
+        second_number = float(input("Enter second number: "))
+
+        return first_number, second_number
+
+    except ValueError:
+
+        print("Invalid input.")
+        return None, None
+
+
+def run_calculator():
+
+    calculator = FunCalculator()
+    history = []
+
+    display_banner()
+
+    while True:
+
+        display_menu()
+
+        user_choice = input("Enter choice: ")
+
+        try:
+
+            if user_choice == "1":
+
+                first_number, second_number = get_two_numbers()
+                if first_number is None:
+                    continue
+
+                result = calculator.add_numbers(first_number, second_number)
+                print("Result:", result)
+
+                history.append(f"{first_number} + {second_number} = {result}")
+
+            elif user_choice == "2":
+
+                first_number, second_number = get_two_numbers()
+                if first_number is None:
+                    continue
+
+                result = calculator.subtract_numbers(first_number, second_number)
+                print("Result:", result)
+
+                history.append(f"{first_number} - {second_number} = {result}")
+
+            elif user_choice == "3":
+
+                first_number, second_number = get_two_numbers()
+                if first_number is None:
+                    continue
+
+                result = calculator.multiply_numbers(first_number, second_number)
+                print("Result:", result)
+
+                history.append(f"{first_number} * {second_number} = {result}")
+
+            elif user_choice == "4":
+
+                first_number, second_number = get_two_numbers()
+                if first_number is None:
+                    continue
+
+                result = calculator.divide_numbers(first_number, second_number)
+                print("Result:", result)
+
+                history.append(f"{first_number} / {second_number} = {result}")
+
+            elif user_choice == "5":
+
+                first_number, second_number = get_two_numbers()
+                if first_number is None:
+                    continue
+
+                result = calculator.power_numbers(first_number, second_number)
+                print("Result:", result)
+
+                history.append(f"{first_number} ^ {second_number} = {result}")
+
+            elif user_choice == "6":
+
+                first_number, second_number = get_two_numbers()
+                if first_number is None:
+                    continue
+
+                result = calculator.modulo_numbers(first_number, second_number)
+                print("Result:", result)
+
+                history.append(f"{first_number} % {second_number} = {result}")
+
+            elif user_choice == "7":
+
+                calculator.math_quiz()
+
+            elif user_choice == "8":
+
+                print("\n===== HISTORY =====")
+
+                for item in history:
+                    print(item)
+
+                print("\nGoodbye!")
+                break
+
+            else:
+
+                print("Invalid choice.")
+
+        except ZeroDivisionError as error:
+            print("Error:", error)
+
+
+run_calculator()
