@@ -1,6 +1,5 @@
 #Simple Calculator by Yael Nadonga
 
-
 import random
 
 
@@ -22,3 +21,11 @@ class BasicCalculator:
 
         return first_number / second_number
 
+
+class AdvancedCalculator(BasicCalculator):
+
+    def power_numbers(self, first_number, second_number):
+        return first_number ** second_number
+
+    def modulo_numbers(self, first_number, second_number):
+        return first_number % second_number
